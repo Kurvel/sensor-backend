@@ -16,6 +16,7 @@ public class SensorService {
     public Sensor saveSensorData(Sensor sensor) {
         ZonedDateTime swedenTime = ZonedDateTime.now(ZoneId.of("Europe/Stockholm"));
         sensor.setTimestamp(swedenTime.toLocalDateTime());
+        System.out.println(sensor.getTimestamp());
         return sensorRepository.save(sensor);
     }
 
